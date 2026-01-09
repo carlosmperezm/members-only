@@ -1,4 +1,5 @@
 import "dotenv/config";
+import path from "node:path";
 import express from "express";
 
 const PORT = process.env.PORT || 3000;

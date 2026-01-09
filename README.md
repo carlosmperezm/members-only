@@ -75,6 +75,34 @@ This is the port where the server is listening. The server has a default port to
 
 This is where express-session look for to sign and validate the cookies and sessions. It does not have to be something special, but it's important to have in the your `.env` file since can lead to some errors in the session.
 
+## Database schema
+
+### Users table
+
+```sql
+TABLE users(
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    password VARCHAR(255),
+    member BOOLEAN,
+    admin BOOLEAN
+);
+```
+
+### Messages table
+
+```sql
+TABLE messages(
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(255) NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    description TEXT,
+    author INT REFERENCES users(id) ON DELETE SET NULL
+);
+
+```
+
 ## License
 
  [The MIT License](https://github.com/carlosmperezm/members-only/tab=License-1-ov-file#)

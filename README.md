@@ -5,53 +5,52 @@ and authorization.
 
 ## Install
 
-1. Fork the repo. Follow GitHub instruction on
+### Fork the repo. 
+Follow GitHub instruction on
 [how to fork a repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 
-    ```bash
-    git clone https://github.com/carlosmperezm/members-only
-    ```
+```bash
+git clone https://github.com/carlosmperezm/members-only
+```
 
-2. Move into the new directory created
+### Move into the new directory created
 
-    ```bash
-    cd members-only/
-    ```
+```bash
+cd members-only/
+```
 
-3. Install dependencies
+### Install dependencies
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
 
-4. Create a file to hold the environment variables
+### Create a file to hold the environment variables
 
-    ```bash
-    touch .env
-    ```
+```bash
+touch .env
+```
 
-5. Set up a PostgreSql database. You can either run it locally or through
-a hosting provider. We're gonna need the string connection to the database.
-So make sure you have handy.
+### Set up a PostgreSql database
 
-6. Populate the database by running
+You can either run it locally or through a hosting provider. You're gonna need the string connection to the database.
+So make sure you have it handy.
 
-    > [!WARNING]
-    > Make sure you have your database connection string before moving on.
+### Populate the database by running
 
-    ```bash
-        node db/seed.js "<your-db-string-connection>"
-    ```
+```bash
+node db/seed.js "<your-db-string-connection>"
+```
 
-    This will populate the database with the necessary tables and row to work.
+This will populate the database with the necessary tables and row to work.
 
-7. Run the app locally
+### Run the app locally
 
-    ```bash
-        npm start
-    ```
+```bash
+npm start
+```
 
-    Now you can access the app by going to `http://localhost:3000/`.
+Now you can access the app by going to `http://localhost:3000/`.
 
 ## Environment Variables
 

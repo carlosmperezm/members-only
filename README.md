@@ -85,8 +85,8 @@ TABLE users(
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     password VARCHAR(255),
-    member BOOLEAN,
-    admin BOOLEAN
+    is_member BOOLEAN,
+    is_admin BOOLEAN
 );
 ```
 

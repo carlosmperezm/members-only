@@ -4,6 +4,7 @@ export const CREATE_USERS_TABLE = `
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         first_name VARCHAR(100),
         last_name VARCHAR(100),
+        username VARCHAR(100),
         password VARCHAR(255),
         is_member BOOLEAN,
         is_admin BOOLEAN
@@ -21,10 +22,10 @@ export const CREATE_MESSAGES_TABLE = `
 `;
 
 export const CREATE_USERS = `
-    INSERT INTO users(first_name, last_name, password, is_member, is_admin)
-        VALUES('John', 'Doe', 'mySuperSecretPassword', TRUE, FALSE),
-        VALUES('Rick', 'Dominic','rickPassword', TRUE, TRUE),
-        VALUES('Laura', 'Hernandez', 'lauraPass', FALSE, FALSE)
+    INSERT INTO users(first_name, last_name, username, password, is_member, is_admin)
+        VALUES('John', 'Doe', 'johnD', 'mySuperSecretPassword', TRUE, FALSE),
+        VALUES('Rick', 'Dominic', 'rickdom' ,'rickPassword', TRUE, TRUE),
+        VALUES('Laura', 'Hernandez', 'lahernandez', 'lauraPass', FALSE, FALSE)
         ;
 `;
 

@@ -5,7 +5,8 @@ and authorization.
 
 ## Install
 
-### Fork the repo. 
+### Fork the repo
+
 Follow GitHub instruction on
 [how to fork a repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 
@@ -43,6 +44,14 @@ node db/seed.js "<your-db-string-connection>"
 ```
 
 This will populate the database with the necessary tables and row to work.
+
+> [!NOTE]
+> `<your-db-string-connection>` is optional here, since the app will look for
+> a database connection string in the `.env` file if you don't provide one
+> when running the command.
+> This is handy since we can have our production database in the `.env` file but
+> we still can seed any different database by providing the string connection when
+> running the command.
 
 ### Run the app locally
 
@@ -102,6 +111,11 @@ TABLE messages(
 );
 
 ```
+
+## Routes
+
+- `/sign-up` will display a form so that the user can
+get registered in the database.
 
 ## License
 

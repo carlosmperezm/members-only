@@ -1,6 +1,6 @@
 
 export const CREATE_USERS_TABLE = `
-    CREATE TABLE IF NOT EXITS users(
+    CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         first_name VARCHAR(100),
         last_name VARCHAR(100),
@@ -12,7 +12,7 @@ export const CREATE_USERS_TABLE = `
 `;
 
 export const CREATE_MESSAGES_TABLE = `
-    CREATE TABLE IF NOT EXITS messages(
+    CREATE TABLE IF NOT EXISTS messages(
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         title VARCHAR(255) NOT NULL,
         date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -23,16 +23,18 @@ export const CREATE_MESSAGES_TABLE = `
 
 export const CREATE_USERS = `
     INSERT INTO users(first_name, last_name, username, password, is_member, is_admin)
-        VALUES('John', 'Doe', 'johnD', 'mySuperSecretPassword', TRUE, FALSE),
-        VALUES('Rick', 'Dominic', 'rickdom' ,'rickPassword', TRUE, TRUE),
-        VALUES('Laura', 'Hernandez', 'lahernandez', 'lauraPass', FALSE, FALSE)
+        VALUES
+            ('John', 'Doe', 'johnD', 'mySuperSecretPassword', TRUE, FALSE),
+            ('Rick', 'Dominic', 'rickdom' ,'rickPassword', TRUE, TRUE),
+            ('Laura', 'Hernandez', 'lahernandez', 'lauraPass', FALSE, FALSE)
         ;
 `;
 
 export const CREATE_MESSAGES = `
     INSERT INTO messages(title, description, author)
-        VALUES('My super message', 'Some random description', 1 ),
-        VALUES('My title', 'Some random description', 2 ),
-        VALUES('My local title', 'Some random description', 1 )
+        VALUES
+            ('My super message', 'Some random description', 1 ),
+            ('My title', 'Some random description', 2 ),
+            ('My local title', 'Some random description', 1 )
         ;
 `;

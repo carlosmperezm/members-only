@@ -3,6 +3,7 @@ import { body } from "express-validator";
 const onlyLettersError = "must only contain letters.";
 const lengthError = "must be between 1 and 10 characters.";
 const passwordLengthError = "must be more than 2 characters";
+const passwordMatchError = "must match";
 
 export const validateFirstName = body("firstName")
     .trim()
@@ -29,6 +30,5 @@ export const validatePassword = body("password")
     .withMessage(`Password ${passwordLengthError}`);
 
 export const validateConfirmPassword = body("confirmPassword")
-    .trim()
-    .isLength({ min: 2 })
-    .withMessage(`Password confirmation ${passwordLengthError}`);
+    .custom((value, { req }) => value === req.body.password)
+    .withMessage(`Password confirmation ${passwordMatchError}`);

@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { getSignUpForm, createUser } from "../controllers/singUpController.js";
 
-const singUpRouter = Router();
+const signUpRouter = Router();
 
-singUpRouter.get("/", getSignUpForm);
-singUpRouter.post("/", createUser, redirectToHome);
+signUpRouter.get("/", getSignUpForm);
+signUpRouter.post("/", createUser);
 
 function redirectToHome(req, res) {
     return res.redirect("/");
 }
 
-export default singUpRouter;
+export default signUpRouter;

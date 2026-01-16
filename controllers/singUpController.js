@@ -21,7 +21,6 @@ export async function createUser(req, res, next) {
     }
     await db.createUser(user);
     return next();
-    //TODO: Add a route for to use this controller
 }
 
 export function getSignUpForm(req, res) {

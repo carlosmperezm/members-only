@@ -116,6 +116,11 @@ TABLE messages(
 
 - `/sign-up` will display a form so that the user can
 get registered in the database.
+- `/login` will display a form where the user can insert their credentials
+to login the app.
+A session will be created so that the user stays logged in.
+The session will expire in one hour
+(That means the user will be logged out in one hour).
 
 ## License
 

@@ -18,3 +18,7 @@ export async function createUser(user) {
         [user.firstName, user.lastName, user.username, user.password, user.isMember, user.isAdmin]
     );
 }
+export async function activateMembership(id) {
+    return await pool
+        .query("UPDATE users SET is_member=TRUE WHERE id=$1;", [id]);
+}

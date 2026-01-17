@@ -121,6 +121,8 @@ to login the app.
 A session will be created so that the user stays logged in.
 The session will expire in one hour
 (That means the user will be logged out in one hour).
+- `/membership` will display a form where the user can activate their
+membership status.
 
 ## License
 

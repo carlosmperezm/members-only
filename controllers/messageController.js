@@ -9,6 +9,9 @@ const validateMessage = [
 ]
 
 export async function getNewMessageForm(req, res) {
+    if (!req.user) {
+        return res.render("no-authenticated");
+    }
     res.render("message-form");
 }
 

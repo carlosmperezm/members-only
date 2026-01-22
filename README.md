@@ -123,6 +123,13 @@ The session will expire in one hour
 (That means the user will be logged out in one hour).
 - `/membership` will display a form where the user can activate their
 membership status.
+- `/messages` will show all messages users has posted.
+One condition though, and it's that only member users can see full info
+about the messages. Users that has only logged in but are not members
+will only see limited info.
+- `/messages/new` will show a form to create a new message.
+If user is not logged in, the app will ask the user to do so first before
+creating new messages.
 
 ## License
 

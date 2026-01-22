@@ -7,7 +7,7 @@ async function verify(username, password, done) {
     try {
         const user = await db.getUserByUsername(username);
         if (!user) {
-            return done(null, false, { message: "Incorrect Password" });
+            return done(null, false, { message: "Incorrect Username" });
         }
         const passwordMatch = await bcrypt.compare(password, user.password);
         if (!passwordMatch) {

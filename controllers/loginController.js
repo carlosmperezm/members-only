@@ -1,10 +1,14 @@
 
 export async function getLoginForm(req, res) {
-    res.render("login");
-}
-export async function login(req, res) {
-    if (req.isAuthenticated) {
-        return res.send("You're logged in :)");
+    if (req.session.messages) {
+        const errors = req.session.messages
+            .map((message) => { return { msg: message } });
+        res.render("login", { errors });
+        req.session.messages = undefined;
+    } else {
+        res.render("login");
     }
-    res.send("You're logged out :(");
+}
+export async function getSuccessLoginPage(req, res) {
+    return res.render("loggedInConfirmation");
 }

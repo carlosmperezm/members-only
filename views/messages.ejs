@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Messages</title>
+</head>
+
+<body>
+    <h1>Messages</h1>
+    <% if (locals.messages && locals.user["is_member"]) { %>
+        <ul>
+            <% messages.forEach((msg)=>{ %>
+                <li> Title: <%= msg.title %>
+                </li>
+                <li> Description: <%= msg.description %>
+                </li>
+                <li> Date: <%= msg.date %>
+                </li>
+                <li> Author: <%= msg.author %>
+                </li>
+                <br>
+                <% }); %>
+        </ul>
+        <%}else if(locals.messages){ %>
+            <p>Data is limited for non-members users</p>
+            <ul>
+                <% messages.forEach((msg)=>{ %>
+                    <li> Title: <%= msg.title %>
+                    </li>
+                    <li> Description: <%= msg.description %>
+                    </li>
+                    <br>
+                    <% }); %>
+            </ul>
+
+            <%} %>
+</body>
+
+</html>

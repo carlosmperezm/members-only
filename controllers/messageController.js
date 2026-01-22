@@ -58,5 +58,5 @@ export async function getAllMessages(req, res) {
         }
     }
 
-    res.send(messages);
+    res.render("messages", { user: req.user, messages })
 }

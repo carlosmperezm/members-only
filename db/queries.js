@@ -22,3 +22,11 @@ export async function activateMembership(id) {
     return await pool
         .query("UPDATE users SET is_member=TRUE WHERE id=$1;", [id]);
 }
+export async function createMessage(message) {
+    return await pool.query(`
+        INSERT INTO messages(title,description,author)
+            VALUES($1,$2,$3)
+        `,
+        [message.title, message.description, message.author.id]
+    )
+}

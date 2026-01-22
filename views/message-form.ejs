@@ -1,0 +1,16 @@
+<html>
+
+<head>
+    <title>Create Message</title>
+</head>
+
+<body>
+    <%- include("partials/errors.ejs") %>
+        <form method="post" action="/messages/new">
+            <input name="title" type="text" placeholder="title" required />
+            <input name="description" type="text" placeholder="any description you wanna add to your message?" />
+            <button type="submit">Create Message</button>
+        </form>
+</body>
+
+</html>

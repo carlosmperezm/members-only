@@ -30,3 +30,7 @@ export async function createMessage(message) {
         [message.title, message.description, message.author.id]
     )
 }
+export async function getAllMessages() {
+    const result = await pool.query("SELECT * FROM messages");
+    return result.rows;
+}

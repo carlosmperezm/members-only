@@ -17,6 +17,12 @@
                 </li>
                 <li> Author: <%= msg.author %>
                 </li>
+                <% if (locals.user["is_admin"]){ %>
+                <a href="messages/delete/<%=msg.id%>">
+                <button>Delete Message</button>
+                <a/>
+                <%} %>
+                <br>
                 <br>
                 <% }); %>
         </ul>

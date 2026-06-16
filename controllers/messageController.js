@@ -60,3 +60,9 @@ export async function getAllMessages(req, res) {
 
     res.render("messages", { user: req.user, messages })
 }
+export async function deleteMessage(req, res) {
+    const messageId = req.params.messageId;
+    await db.deleteMessage(messageId);
+    res.redirect('/messages');
+
+}

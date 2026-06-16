@@ -21,13 +21,11 @@ export const createUser = [
     validateUser,
     async (req, res) => {
         const errors = validationResult(req);
-
         if (!errors.isEmpty()) {
             return res
                 .status(400)
                 .render("sing-up", { errors: errors.array() });
         }
-
         const {
             firstName,
             lastName,
@@ -35,6 +33,7 @@ export const createUser = [
             password,
             confirmPassword
         } = matchedData(req);
+        const isAdmin = req.body.is_admin === "on" ? true : false;
 
         const hashedPassword = await bcrypt.hash(password, 10);
         const passwordMatch = await bcrypt
@@ -49,8 +48,8 @@ export const createUser = [
             lastName,
             username,
             password: hashedPassword,
-            isMember: false,
-            isAdmin: false,
+            isMember: isAdmin,
+            isAdmin,
         }
         await db.createUser(user);
         return res.send("Successfully signed up");
